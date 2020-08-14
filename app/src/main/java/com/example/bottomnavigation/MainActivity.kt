@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val homebutton = findViewById<ImageButton>(R.id.ibHome)
-        val favouritesbutton = findViewById<ImageButton>(R.id.ibFavourites)
-        val contactsbutton = findViewById<ImageButton>(R.id.ibContacts)
+        val homeButton = findViewById<ImageButton>(R.id.ibHome)
+        val favouritesButton = findViewById<ImageButton>(R.id.ibFavourites)
+        val contactsButton = findViewById<ImageButton>(R.id.ibContacts)
 
         val homeFragment = HomeFragment()
         val favouriteFragment = FavouriteFragment()
@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         fun resetColor(){
             //RESET ALL BUTTONS COLOR TO GREEN
-            DrawableCompat.setTint(homebutton.drawable, ContextCompat.getColor(this, R.color.green))
-            DrawableCompat.setTint(favouritesbutton.drawable, ContextCompat.getColor(this, R.color.green))
-            DrawableCompat.setTint(contactsbutton.drawable, ContextCompat.getColor(this, R.color.green))
+            DrawableCompat.setTint(homeButton.drawable, ContextCompat.getColor(this, R.color.green))
+            DrawableCompat.setTint(favouritesButton.drawable, ContextCompat.getColor(this, R.color.green))
+            DrawableCompat.setTint(contactsButton.drawable, ContextCompat.getColor(this, R.color.green))
         }
 
 
@@ -33,39 +33,39 @@ class MainActivity : AppCompatActivity() {
             commit()
             addToBackStack(null)
             resetColor()
-            DrawableCompat.setTint(homebutton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
+            DrawableCompat.setTint(homeButton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
         }
 
         //WHEN HOME IS NAVIGATED TO
-        homebutton.setOnClickListener() {
+        homeButton.setOnClickListener() {
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, homeFragment)
                 commit()
                 addToBackStack(null)
                 resetColor()
-                DrawableCompat.setTint(homebutton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
+                DrawableCompat.setTint(homeButton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
             }
         }
 
         //WHEN FAVOURITES IS NAVIGATED TO
-        favouritesbutton.setOnClickListener() {
+        favouritesButton.setOnClickListener() {
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, favouriteFragment)
                 commit()
                 addToBackStack(null)
                 resetColor()
-                DrawableCompat.setTint(favouritesbutton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
+                DrawableCompat.setTint(favouritesButton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
             }
         }
 
         //WHEN CONTACTS IS NAVIGATED TO
-        contactsbutton.setOnClickListener() {
+        contactsButton.setOnClickListener() {
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, contactsFragment )
                 commit()
                 addToBackStack(null)
                 resetColor()
-                DrawableCompat.setTint(contactsbutton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
+                DrawableCompat.setTint(contactsButton.drawable, ContextCompat.getColor(this@MainActivity, R.color.red))
             }
         }
     }
